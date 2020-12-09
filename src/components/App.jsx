@@ -30,7 +30,7 @@ function App() {
       <div>
         <ul>
           {items.map(todoItem => (
-            <li>{todoItem}</li>
+           
           ))}
         </ul>
       </div>
