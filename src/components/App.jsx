@@ -3,6 +3,7 @@ import ToDoItem from "./ToDoItem";
 function App() {
   const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
+  
 
   function handleChange(event) {
     const newValue = event.target.value;
@@ -30,7 +31,7 @@ function App() {
       <div>
         <ul>
           {items.map((todoItem) => (
-            <ToDoItem text={todoItem} />
+            <ToDoItem  text={todoItem} />
           ))}
         </ul>
       </div>

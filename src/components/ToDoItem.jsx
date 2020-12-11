@@ -1,7 +1,8 @@
 import React from "react";
 
 function ToDoItem(props) {
-  return <li>{props.text}</li>;
+  const strikThrough = { textDecoration: "line-through" };
+  return <li style={strikThrough}>{props.text}</li>;
 }
 
 // class ToDoItem extends React.Component {
