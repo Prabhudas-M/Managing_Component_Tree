@@ -6,9 +6,15 @@ function ToDoItem(props) {
     setisDone((preValue) => !preValue);
   }
   return (
-    <div onClick={ClickedYesNo}>
+    <div
+      onClick={() => {
+        props.onChecked(props.id);
+      }}
+    >
+      {/* <li style={{ textDecoration: isDone ? "line-through" : "none" }}> */}
       <li style={{ textDecoration: isDone ? "line-through" : "none" }}>
         {props.text}
+        {props.id}
       </li>
     </div>
   );

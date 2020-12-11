@@ -3,7 +3,6 @@ import ToDoItem from "./ToDoItem";
 function App() {
   const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
-  
 
   function handleChange(event) {
     const newValue = event.target.value;
@@ -16,10 +15,9 @@ function App() {
     });
     setInputText("");
   }
-function deleteItem()
-{
-  console.log("item deleted");
-}
+  function deleteItem(id) {
+    console.log(id);
+  }
   return (
     <div className="container">
       <div className="heading">
@@ -33,8 +31,13 @@ function deleteItem()
       </div>
       <div>
         <ul>
-          {items.map((todoItem) => (
-            <ToDoItem text={todoItem} onChecked={deleteItem}/>
+          {items.map((todoItem, index) => (
+            <ToDoItem
+              key={index}
+              id={index}
+              text={todoItem}
+              onChecked={deleteItem}
+            />
           ))}
         </ul>
       </div>
