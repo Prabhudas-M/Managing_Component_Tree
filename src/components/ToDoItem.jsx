@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ToDoItem(props) {
-  const strikThrough = { textDecoration: "line-through" };
-const isDone = "ture";
-  return <li style={strikThrough}>{props.text}</li>;
+  const [isDone, setisDone] = useState(false);
+  function ClickedYesNo() {
+    setisDone((preValue) => !preValue);
+  }
+  return (
+    <div onClick={ClickedYesNo}>
+      <li style={{ textDecoration: isDone ? "line-through" : "none" }}>
+        {props.text}
+      </li>
+    </div>
+  );
 }
 
 // class ToDoItem extends React.Component {
