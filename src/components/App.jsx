@@ -16,7 +16,11 @@ function App() {
     setInputText("");
   }
   function deleteItem(id) {
-    console.log(id);
+    setItems((preValue) => {
+      return preValue.filter((items, index) => {
+        return index !== id;
+      });
+    });
   }
   return (
     <div className="container">
